@@ -1,0 +1,427 @@
+.container {
+  max-width: 1400px;
+  /* outline: 1px solid #f00; */
+  /* 남아있는 여백을 자동으로 처리해달라 */
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 0 auto;
+}
+
+/* color #ff00ff / rgb(255, 0, 255 / rgba(255,255,255,[0.5]-opacity) */
+.btn {
+  /* 화살표 위치 조정 > 
+    inline-flex: flex를 적용하지만 글자처럼 취급한다
+    inline-block도 마찬가지  */
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+  padding: 20px;
+  border: 1px solid var(--blue);
+  color: rgb(82, 148, 248);
+  border-radius: 5px;
+  /* transition: background-color 0.5s ease, color 0.5s ease; */
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  background-color: rgb(82, 148, 248);
+  color: #fff;
+}
+
+/* 가상의 조건 :not(): */
+.btn:not(.btn--fixed):hover span {
+  transform: translateX(10px);
+}
+
+.btn--white:hover {
+  background-color: rgb(82, 148, 248);
+  color: #fff;
+}
+.btn--white {
+  border-color: #fff;
+  color: #fff;
+}
+
+.btn--round {
+  border-radius: 100px;
+  color: black;
+  border: 1px solid white;
+}
+.btn span {
+  transition: transform 0.25s ease;
+}
+
+/* 단위
+px, em (부모의 폰트 사이즈를 따라감, 만약 부모 폰트 크기가 50px이면 1=50, 2=100),
+rem (root의 폰트 사이즈를 따라감 */
+strong {
+  font-weight: 700;
+}
+h2 {
+  font-size: var(--h2);
+  line-height: 1.25;
+  margin-bottom: 30px;
+}
+
+.visual__video {
+  width: 100%;
+  height: 100vh;
+  /*object-fit의 디폴트는 contain
+    contain -비율유지
+    cover -비율무시 > 화면에 꽉 채우기
+    */
+  object-fit: cover;
+}
+
+.visual__txt {
+  /*영상에 겹치게 하기*
+    position을 absolute로 쓰면 좌우상하로 좌표 지정 가능*/
+  position: absolute;
+  color: #fff;
+  bottom: 200px;
+  left: 50px;
+  font-size: 20px;
+}
+
+.visual__txt h3 {
+  font-size: 64px;
+  font-weight: 900;
+  /* 줄 간격 띄우기 padding이나 margin-bottom */
+  margin-bottom: 50px;
+  /* 글자에 그림자 넣기
+  box-shadow는 네모 그림자 */
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.visual__txt p {
+  margin-bottom: 30px;
+}
+
+.section {
+  padding: 100px 0px;
+}
+
+.gray {
+  background-color: var(--gray);
+}
+
+.section .container {
+  display: flex;
+  /* 디폴트는 flex-direction: row */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about .about__txt p {
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.about .about__txt a:hover span {
+  /* relative -현재 내가 위치하고 있는 곳이 기준 */
+  /* position: relative;
+  left: 20px; */
+  transform: translateX(10px);
+}
+
+.about .about__img {
+  width: 50%;
+}
+.about .about__img img {
+  width: 100%;
+}
+
+/* .about .container h2 {
+  font-size: 100px !important; <최우선순위, 남발 ㄴㄴ
+} */
+
+.products .container {
+  flex-direction: column;
+}
+
+/* Our Products 선박과 항만을... */
+.products .products-title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.products .products-title p {
+  font-size: 20px;
+}
+
+/* [AVISS NAVISS 배너] */
+.products .products-banner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.products .products-banner a {
+  width: calc(50% - 10px);
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* 태그상에는 존재 하지 않지만 내용이 없는 가짜(pseudo element) element를 만들기 
+
+<element의 쌓이는 순서>
+1. 위에서 아래로 아래에 있을수록 위로 올라간다.
+2. 만약 position 속성이 있으면 태그의 순서와 상관없이 위로 올라간다.
+3. 쌓이는 순서는 z-index로 바꿀 수 있다.
+*/
+.products .products-banner a::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  transition: background-color 0.25s ease;
+  z-index: 2;
+}
+.products .products-banner a:hover::before {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.products .products-banner a img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* [사진 위에 제목 올리기] */
+.products .products-banner a .products-banner__title {
+  position: absolute;
+  z-index: 99;
+  top: 30px;
+  left: 30px;
+  color: white;
+  font-size: 20px;
+}
+
+.products .products-banner a .products-banner__title h3 {
+  font-size: var(--h2);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* [사진 위에 + 올리기] */
+.products .products-banner a .more {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  color: white;
+  font-size: 64px;
+}
+
+.banner {
+  background: rgb(0, 212, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(24, 132, 252, 1) 0%,
+    rgba(16, 42, 70, 1) 100%
+  );
+  color: #fff;
+}
+.banner h2 {
+  font-size: 28px;
+  margin-bottom: 0;
+}
+
+.tech .container {
+  gap: 20px;
+  align-items: start;
+}
+.tech .container .tech-item {
+  width: 33.33%;
+}
+
+/* tech item 여백 만들기 */
+.tech .container .tech-banner {
+  margin-top: 100px;
+}
+.tech .container .tech-banner a {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  display: block;
+}
+.tech .container .tech-banner img {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.tech .container .tech-banner a .tech-banner__title {
+  position: absolute;
+  color: #fff;
+  left: 30px;
+  top: 30px;
+  right: 30px;
+  z-index: 3;
+}
+.tech .container .tech-banner a .tech-banner__title h3 {
+  font-size: var(--h3);
+  margin-bottom: 30px;
+}
+.tech .container .tech-banner img {
+  width: 100%;
+}
+.tech .tech-banner a .more {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  font-size: 64px;
+  color: #fff;
+  z-index: 3;
+}
+.tech .tech-banner a::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  position: absolute;
+  transition: background-color 0.25s ease;
+}
+.tech .tech-banner a:hover::before {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 4;
+}
+
+.tech .container {
+  flex-direction: colume;
+  align-items: flex-start;
+}
+.tech .tech-title h2 {
+  margin-bottom: 60px;
+}
+
+.tech .tech-title p {
+  margin-bottom: 50px;
+  font-size: 24px;
+}
+
+.tech .tech-banner__title p {
+  font-size: 19px;
+}
+
+/* [배경 지정]
+- 이미지는 영역이 늘어나는데 배경은 끼워들어가기 때문에 그냥 채워짐 (디폴트는 타일형) 
+- 부모 넓이 높이를 따라감 */
+.investors {
+  background-image: url("../images/main/main-investors.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* left top (0 0으로 하면 왼쪽 상단에 맞춰줌 
+  right left top bottom 지정 가능 */
+  background-position: 0 0;
+}
+
+/* [Our Investors section의 방향 잡기]
+justify-content의 디폴트는 row, 내가 지정하면 됨
+align-items는 축의 반대 */
+.investors .container {
+  flex-direction: column;
+  align-items: start;
+  color: white;
+}
+
+/* [리스트 뒤 하얀 박스와 list 재나열] */
+.investors .investors__list {
+  background-color: #fff;
+  /* 투명 배경 - background-color: rgba(255, 255, 255, 0.5); */
+  /* 유리재질 배경 - backdrop-filter: blur{30px}; */
+  padding: 50px;
+  border-radius: 8px;
+  width: 100%;
+  display: flex;
+  /* 리스트가 밑으로 떨어지게 만들기 
+  default가 no-wrap*/
+  flex-wrap: wrap;
+}
+
+/* [Investors List] */
+.investors .investors__list li {
+  width: 25%;
+  filter: grayscale(1);
+  transition: filter 0.5s ease;
+}
+
+.investors .investors__list li:hover {
+  filter: grayscale(0);
+}
+
+/* 무한으로 넘어가는 슬라이드 사진 밑에 스크롤바 없애기 */
+.news {
+  overflow: hidden;
+}
+.news .container {
+  flex-direction: column;
+  /* 제목 왼쪽에 보내기 */
+  align-items: start;
+}
+
+.news .news-title {
+  width: 100%;
+  /* 옆으로 보내기 */
+  display: flex;
+  /* 제목이랑 전체보기 버튼 양옆으로 보내기 */
+  justify-content: space-between;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+/* 부모의 넓이를 세팅 해줘야함 */
+.news .news-banner {
+  width: 100%;
+  position: relative;
+}
+
+/* 화살표 위치 바꾸기 */
+.news .news-banner .btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-88px);
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 5;
+}
+
+.news .news-banner .btn--prev {
+  left: -150px;
+}
+.news .news-banner .btn--next {
+  right: -150px;
+}
+/* [사진]
+스와이퍼 쓰면 flex처리를 따로 안 해도 됨 */
+.news .news__img {
+  position: relative;
+  border-radius: 15px;
+  /* 영역 벗어난 걸 잘라버림 */
+  overflow: hidden;
+}
+
+.news .news__img img {
+  width: 100%;
+}
+/* [미니 태그 sticker 옮기기] 
+이미지가 영역을 차지하고 있음 */
+.news .news__img .sticker {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  color: #fff;
+  background-color: var(--red);
+  padding: 10px;
+  border-radius: 5px;
+  /* position을 주면 inline도 상하패딩 먹음  */
+}
+
+.news .news__txt h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 20px 0;
+}
