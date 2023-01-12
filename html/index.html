@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="yeiwon-seadronix.netlify.app" />
     <meta property="og:title" content="Seadronix" />
@@ -54,16 +57,17 @@
       <h1 class="logo">
         <a href=""
           ><img
-            src="../images/layout/logo-dark.svg"
+            src="../images/layout/logo-light.svg"
             alt="seadronix logo"
             class="logo__img--dark"
-          /><img
-            src="../images/layout/logo-light.svg"
-            alt="seadronix logo2"
-            class="logo__img--light"
           />
         </a>
       </h1>
+      <button class="btn btn--all">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav class="gnb">
         <h2 class="hidden">global navigation</h2>
         <ul class="list">
@@ -114,12 +118,12 @@
           <li>
             <a href="">CONTACT</a>
           </li>
+          <div class="language">
+            <a href="" class="active">KO</a>
+            <a href="">EN</a>
+          </div>
         </ul>
       </nav>
-      <div class="language">
-        <a href="" class="active">KO</a>
-        <a href="">EN</a>
-      </div>
     </header>
     <!-- bem (block__element--modifier) -->
     <!-- naming줄 때 언더바 두번 __ -->
@@ -602,6 +606,40 @@
       <span class="material-icons"> north </span>
     </button>
     <script>
+      const btnAll = document.querySelector(".btn--all");
+      const header = document.querySelector(".header");
+      const depth01 = document.querySelectorAll(".gnb .list > li > a");
+      const depth02 = document.querySelectorAll(".gnb .list > li > .depth02");
+
+      const total = depth01.length;
+      for (let i = 0; i < 6; i++) {
+        depth01[i].addEventListener("click", function (e) {
+          e.preventDefault();
+          for (let j = 0; j < total; j++) {
+            if (i !== j) {
+              depth02[j].classList.remove("on");
+            }
+          }
+          depth02[i].classList.toggle("on");
+        });
+        depth02[i].addEventListener("click", function (e) {
+          e.preventDefault();
+        });
+      }
+      btnAll.addEventListener("click", function () {
+        const isContains = header.classList.contains("on");
+        if (isContains) {
+          header.classList.remove("on");
+          setTimeout(function () {
+            for (let i = 0; i < total; i++) {
+              depth02[i].classList.remove("on");
+            }
+          }, 250);
+        } else {
+          header.classList.add("on");
+        }
+      });
+
       AOS.init({
         duration: 1000,
         delay: 200,
@@ -615,27 +653,6 @@
           prevEl: ".news-banner .btn--prev",
         },
       });
-
-      const header = document.querySelector(".header");
-      const btnTop = document.querySelector(".btn-top");
-      btnTop.addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-      window.addEventListener("scroll", function (e) {
-        console.log(window.scrollY);
-        if (window.scrollY > 800) {
-          header.classList.add("on");
-          btnTop.classList.add("on");
-        } else {
-          header.classList.remove("on");
-          btnTop.classList.remove("on");
-        }
-      });
-
-      //console.log("나는 드디어 사용자가 일으키는 이벤트중에 scroll event를 감지할 수 있게 되었습니다.");
-      //window.addEventListener("click", function () {
-      //alert("너가 클릭했냐?");
-      //});
     </script>
   </body>
 </html>

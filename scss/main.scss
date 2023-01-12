@@ -1,0 +1,341 @@
+.container {
+  margin: 0 auto;
+  max-width: 1400px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 20px;
+  font-size: 18px;
+  color: rgb(82, 148, 248);
+  border: 1px solid var(--blue);
+  transition: all 0.25s ease;
+  border-radius: 5px;
+  &:hover {
+    color: #fff;
+    background-color: rgb(82, 148, 248);
+  }
+  &:not(.btn--fixed) {
+    &:hover {
+      span {
+        transform: translateX(10px);
+      }
+    }
+  }
+  span {
+    transition: transform 0.25s ease;
+  }
+}
+.btn--white {
+  &:hover {
+    color: #fff;
+    background-color: rgb(82, 148, 248);
+  }
+  color: #fff;
+  border-color: #fff;
+}
+.btn--round {
+  color: black;
+  border: 1px solid white;
+  border-radius: 100px;
+}
+strong {
+  font-weight: 700;
+}
+h2 {
+  margin-bottom: 30px;
+  font-size: var(--h2);
+  line-height: 1.25;
+}
+.visual__video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+.visual__txt {
+  position: absolute;
+  bottom: 200px;
+  left: 50px;
+  font-size: 20px;
+  color: #fff;
+  h3 {
+    margin-bottom: 50px;
+    font-size: 64px;
+    font-weight: 900;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+  }
+  p {
+    margin-bottom: 30px;
+  }
+}
+.section {
+  padding: 100px 0px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.gray {
+  background-color: var(--gray);
+}
+.about {
+  .about__txt {
+    p {
+      margin-bottom: 50px;
+      font-size: 18px;
+    }
+    a {
+      &:hover {
+        span {
+          transform: translateX(10px);
+        }
+      }
+    }
+  }
+  .about__img {
+    width: 50%;
+    img {
+      width: 100%;
+    }
+  }
+}
+.products {
+  .container {
+    flex-direction: column;
+  }
+  .products-title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    p {
+      font-size: 20px;
+    }
+  }
+  .products-banner {
+    display: flex;
+    justify-content: space-between;
+    a {
+      width: calc(50% - 10px);
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 2;
+        transition: background-color 0.25s ease;
+        background-color: rgba(0, 0, 0, 0);
+      }
+      &:hover {
+        &::before {
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+      }
+      img {
+        width: 100%;
+        height: 480px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+      .products-banner__title {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        z-index: 99;
+        font-size: 20px;
+        color: white;
+        h3 {
+          margin-bottom: 10px;
+          font-size: var(--h2);
+          font-weight: 700;
+        }
+      }
+      .more {
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+        font-size: 64px;
+        color: white;
+      }
+    }
+  }
+}
+.banner {
+  color: #fff;
+  background: rgb(0, 212, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(24, 132, 252, 1) 0%,
+    rgba(16, 42, 70, 1) 100%
+  );
+  h2 {
+    margin-bottom: 0;
+    font-size: 28px;
+  }
+}
+.tech {
+  .container {
+    align-items: start;
+    gap: 20px;
+    align-items: flex-start;
+    flex-direction: colume;
+    .tech-item {
+      width: 33.33%;
+    }
+    .tech-banner {
+      margin-top: 100px;
+      a {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+        .tech-banner__title {
+          position: absolute;
+          top: 30px;
+          right: 30px;
+          left: 30px;
+          z-index: 3;
+          color: #fff;
+          h3 {
+            margin-bottom: 30px;
+            font-size: var(--h3);
+          }
+        }
+      }
+      img {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+      }
+    }
+  }
+  .tech-banner {
+    a {
+      .more {
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+        z-index: 3;
+        font-size: 64px;
+        color: #fff;
+      }
+      &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transition: background-color 0.25s ease;
+        background-color: rgba(0, 0, 0, 0);
+      }
+      &:hover {
+        &::before {
+          z-index: 4;
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+  }
+  .tech-title {
+    h2 {
+      margin-bottom: 60px;
+    }
+    p {
+      margin-bottom: 50px;
+      font-size: 24px;
+    }
+  }
+  .tech-banner__title {
+    p {
+      font-size: 19px;
+    }
+  }
+}
+.investors {
+  background-image: url("../images/main/main-investors.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .container {
+    align-items: start;
+    flex-direction: column;
+    color: white;
+  }
+  .investors__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 8px;
+    li {
+      width: 25%;
+      transition: filter 0.5s ease;
+      filter: grayscale(1);
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+  }
+}
+.news {
+  overflow: hidden;
+  .container {
+    align-items: start;
+    flex-direction: column;
+  }
+  .news-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .news-banner {
+    width: 100%;
+    position: relative;
+    .btn {
+      position: absolute;
+      top: 50%;
+      z-index: 5;
+      transform: translateY(-88px);
+      background: rgba(255, 255, 255, 0.5);
+    }
+    .btn--prev {
+      left: -150px;
+    }
+    .btn--next {
+      right: -150px;
+    }
+  }
+  .news__img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    img {
+      width: 100%;
+    }
+    .sticker {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 10px;
+      color: #fff;
+      background-color: var(--red);
+      border-radius: 5px;
+    }
+  }
+  .news__txt {
+    h3 {
+      margin: 20px 0;
+      font-size: 24px;
+      font-weight: 700;
+    }
+  }
+}

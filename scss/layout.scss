@@ -1,0 +1,143 @@
+@charset "UTF-8";
+@import "vars";
+
+body {
+  font-family: "Lato", "Pretendard";
+  font-size: 16px;
+  color: #111;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+input {
+  font-family: inherit;
+}
+textarea {
+  font-family: inherit;
+}
+p {
+  line-height: 1.5;
+}
+.hidden {
+  display: none;
+}
+
+button {
+  border: none;
+  background: none;
+  padding: none;
+  outline: none;
+}
+
+.header {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  top: 0;
+  z-index: 99;
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    padding-left: 20px;
+    &__img--dark {
+      width: 150px;
+    }
+  }
+  .btn--all {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    span {
+      display: block;
+      position: absolute;
+      width: 30px;
+      height: 3px;
+      background-color: white;
+      left: 15px;
+      transition: all 0.25s ease;
+      &:nth-child(1) {
+        top: 19px;
+      }
+      &:nth-child(2) {
+        top: 29px;
+      }
+      &:nth-child(3) {
+        top: 39px;
+      }
+    }
+  }
+  &.on {
+    .btn--all {
+      span {
+        &:nth-child(1) {
+          top: 29px;
+          transform: rotateX(-45deg);
+        }
+        &:nth-child(2) {
+          transform: translateX(-50px);
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          top: 29px;
+          transform: rotateX(45deg);
+        }
+      }
+    }
+    .gnb {
+      left: 0;
+    }
+  }
+  .gnb {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 800px;
+    background-color: rgba(white, 0.97);
+    transition: all 0.25s ease;
+    .list {
+      > li {
+        > a {
+          display: flex;
+          flex-direction: column;
+          margin-top: 50px;
+          font-size: 16px;
+          font-weight: 800;
+          padding-left: 10px;
+        }
+      }
+      .depth02 {
+        display: none;
+        transition: all 0.25s ease;
+        &:on {
+          display: block;
+        }
+        li {
+          margin-top: 10px;
+          a {
+            font-size: 14px;
+            display: flex;
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+    .language {
+      font-weight: 500;
+      display: flex;
+      font-size: 16px;
+      margin-top: 50px;
+      padding: 20px 0 10px 20px;
+      border-top: 1px solid rgb(177, 177, 177);
+      .active {
+        color: $blue;
+        margin-right: 20px;
+      }
+    }
+  }
+}
