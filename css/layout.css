@@ -1,7 +1,7 @@
-body {
-  font-family: "Lato", "Pretendard";
-  font-size: 16px;
-  color: #111;
+@charset "UTF-8";
+/*디폴트값 30*/
+.hidden {
+  display: none;
 }
 
 a {
@@ -21,49 +21,61 @@ p {
   line-height: 1.5;
 }
 
-.hidden {
-  display: none;
+img {
+  vertical-align: top;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 button {
   border: none;
-  background: none;
-  padding: none;
   outline: none;
+  background: none;
+}
+
+body {
+  font-family: "Lato", "Pretendard";
+  font-size: 16px;
+  color: #111;
 }
 
 .header {
   position: fixed;
-  height: 60px;
   width: 100%;
-  top: 0;
-  z-index: 99;
+  height: 60px;
+  background-color: #fff;
 }
 .header .logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 60px;
-  padding-left: 20px;
 }
-.header .logo__img--dark {
-  width: 150px;
+.header .logo a {
+  display: block;
+  height: 60px;
+  padding: 15px 20px;
+}
+.header .logo a img {
+  height: 30px;
+}
+.header .logo a .logo__img--light {
+  display: none;
 }
 .header .btn--all {
   width: 60px;
   height: 60px;
-  position: absolute;
-  left: 0;
+  right: 0;
   top: 0;
+  position: absolute;
 }
 .header .btn--all span {
-  display: block;
-  position: absolute;
   width: 30px;
-  height: 3px;
-  background-color: white;
+  height: 2px;
+  background-color: #111;
+  position: absolute;
   left: 15px;
-  transition: all 0.25s ease;
 }
 .header .btn--all span:nth-child(1) {
   top: 19px;
@@ -73,63 +85,4 @@ button {
 }
 .header .btn--all span:nth-child(3) {
   top: 39px;
-}
-.header.on .btn--all span:nth-child(1) {
-  top: 29px;
-  transform: rotateX(-45deg);
-}
-.header.on .btn--all span:nth-child(2) {
-  transform: translateX(-50px);
-  opacity: 0;
-}
-.header.on .btn--all span:nth-child(3) {
-  top: 29px;
-  transform: rotateX(45deg);
-}
-.header.on .gnb {
-  left: 0;
-}
-.header .gnb {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  height: 800px;
-  background-color: rgba(255, 255, 255, 0.97);
-  transition: all 0.25s ease;
-}
-.header .gnb .list > li > a {
-  display: flex;
-  flex-direction: column;
-  margin-top: 50px;
-  font-size: 16px;
-  font-weight: 800;
-  padding-left: 10px;
-}
-.header .gnb .list .depth02 {
-  display: none;
-  transition: all 0.25s ease;
-}
-.header .gnb .list .depth02:on {
-  display: block;
-}
-.header .gnb .list .depth02 li {
-  margin-top: 10px;
-}
-.header .gnb .list .depth02 li a {
-  font-size: 14px;
-  display: flex;
-  padding-left: 10px;
-}
-.header .gnb .language {
-  font-weight: 500;
-  display: flex;
-  font-size: 16px;
-  margin-top: 50px;
-  padding: 20px 0 10px 20px;
-  border-top: 1px solid rgb(177, 177, 177);
-}
-.header .gnb .language .active {
-  color: rgb(82, 148, 248);
-  margin-right: 20px;
 }/*# sourceMappingURL=layout.css.map */

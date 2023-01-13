@@ -1,0 +1,36 @@
+.hidden {
+  display: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input {
+  font-family: inherit;
+}
+
+textarea {
+  font-family: inherit;
+}
+
+p {
+  line-height: 1.5;
+}
+
+img {
+  vertical-align: top;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: none;
+}/*# sourceMappingURL=common.css.map */
