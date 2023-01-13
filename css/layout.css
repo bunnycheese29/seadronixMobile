@@ -134,6 +134,9 @@ body {
   color: #fff;
   display: none;
 }
+.header .gnb .list > li .depth02.on {
+  display: block;
+}
 .header .gnb .list > li .depth02 li a {
   height: 40px;
   display: flex;

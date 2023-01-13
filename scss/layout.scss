@@ -96,6 +96,9 @@ body {
           background-color: $blue;
           color: #fff;
           display: none;
+          &.on {
+            display: block;
+          }
           li {
             a {
               height: 40px;
