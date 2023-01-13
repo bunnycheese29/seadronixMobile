@@ -1,0 +1,45 @@
+@import "vars";
+@import "mixins";
+
+.visual__list {
+  height: 100vh;
+  width: 100%;
+  li {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: 50%;
+    &.visual01 {
+      background-image: url("../images/main/visual01.webp");
+    }
+    &.visual02 {
+      background-image: url("../images/main/visual02.jpg.jpg");
+    }
+    &.visual03 {
+      background-image: url("../images/main/visual03.jpg.jpg");
+    }
+    &.visual04 {
+      background-image: url("../images/main/visual04.webp");
+    }
+    &.visual05 {
+      background-image: url("../images/main/visual05.webp");
+    }
+  }
+  .pagination {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    display: flex;
+    z-index: 3;
+    justify-content: center;
+    .swiper-pagination-bullet {
+      opacity: 1;
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      &-active {
+        background-color: $blue;
+      }
+    }
+  }
+}

@@ -50,8 +50,11 @@
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/main.css" />
     <!-- script jsc > enter -->
+    <!-- 외부 라이브러리 js는 여기다 적어도 되는데
+    내가 짜는 js에는 defer라고 적어줘야함 -->
     <script src="../js/aos.js"></script>
     <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/main.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -137,13 +140,23 @@
       <!-- <button class="btn btn--primary"></button> -->
       <section class="visual">
         <h2 class="hidden">main video</h2>
-        <video
+        <!-- <video
           src="../video/cargo_color.mp4"
           autoplay
           muted
           loop
           class="visual__video"
-        ></video>
+        ></video> -->
+        <div class="visual__list">
+          <ul class="swiper-wrapper">
+            <li class="visual01 swiper-slide"></li>
+            <li class="visual02 swiper-slide"></li>
+            <li class="visual03 swiper-slide"></li>
+            <li class="visual04 swiper-slide"></li>
+            <li class="visual05 swiper-slide"></li>
+          </ul>
+          <div class="pagination"></div>
+        </div>
         <div class="visual__txt">
           <h3
             data-aos="fade-right"
@@ -611,41 +624,5 @@
     <button class="btn-top">
       <span class="material-icons"> north </span>
     </button>
-    <script>
-      AOS.init({
-        duration: 1000,
-        delay: 200,
-      });
-      const swiper = new Swiper(".news-banner", {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        loop: true,
-        navigation: {
-          nextEl: ".news-banner .btn--next",
-          prevEl: ".news-banner .btn--prev",
-        },
-      });
-
-      const header = document.querySelector(".header");
-      const btnTop = document.querySelector(".btn-top");
-      btnTop.addEventListener("click", function () {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-      window.addEventListener("scroll", function (e) {
-        console.log(window.scrollY);
-        if (window.scrollY > 800) {
-          header.classList.add("on");
-          btnTop.classList.add("on");
-        } else {
-          header.classList.remove("on");
-          btnTop.classList.remove("on");
-        }
-      });
-
-      //console.log("나는 드디어 사용자가 일으키는 이벤트중에 scroll event를 감지할 수 있게 되었습니다.");
-      //window.addEventListener("click", function () {
-      //alert("너가 클릭했냐?");
-      //});
-    </script>
   </body>
 </html>

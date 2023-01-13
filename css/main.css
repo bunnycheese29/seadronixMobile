@@ -1,1 +1,44 @@
-/*# sourceMappingURL=main.css.map */
+@charset "UTF-8";
+/*디폴트값 30*/
+.visual__list {
+  height: 100vh;
+  width: 100%;
+}
+.visual__list li {
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: 50%;
+}
+.visual__list li.visual01 {
+  background-image: url("../images/main/visual01.webp");
+}
+.visual__list li.visual02 {
+  background-image: url("../images/main/visual02.jpg.jpg");
+}
+.visual__list li.visual03 {
+  background-image: url("../images/main/visual03.jpg.jpg");
+}
+.visual__list li.visual04 {
+  background-image: url("../images/main/visual04.webp");
+}
+.visual__list li.visual05 {
+  background-image: url("../images/main/visual05.webp");
+}
+.visual__list .pagination {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  z-index: 3;
+  justify-content: center;
+}
+.visual__list .pagination .swiper-pagination-bullet {
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+}
+.visual__list .pagination .swiper-pagination-bullet-active {
+  background-color: rgb(82, 148, 248);
+}/*# sourceMappingURL=main.css.map */
