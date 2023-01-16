@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../js/gsap/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+      }
+      .box--red {
+        background-color: rgb(255, 45, 45);
+      }
+      .box--green {
+        background-color: rgb(39, 134, 39);
+      }
+      .box--blue {
+        background-color: rgb(23, 23, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box box--red"></div>
+    <div class="box box--green"></div>
+    <div class="box box--blue"></div>
+    <script>
+      //to는 앞으로 이동, from은 거꾸로 이동
+      //자바에선 -대신 대문자로 써주면 된다.
+
+      //x - 가로축 이동, scale - 크기
+
+      //   gsap.to(".box--red", { x: 800, backgroundColor: "#00ff00", duration: 2 });
+      //   gsap.from(".box--red", {x: 800,backgroundColor: "#00ff00",duration: 2,});
+      //   gsap.to(".box--blue", { scale: 3, x: 500, duration: 2, ease: "bounce" });
+      gsap.to(".box", { x: 800, duration: 2, delay: 1, stagger: 0.2 });
+    </script>
+  </body>
+</html>

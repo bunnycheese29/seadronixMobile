@@ -153,4 +153,46 @@ body {
   border-color: rgb(82, 148, 248);
   border-radius: 100px;
   margin: 0 10px 0 10px;
+}
+
+.language {
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  font-weight: 700;
+  transform: translateY(-50%);
+}
+.language .active {
+  color: rgb(82, 148, 248);
+}
+
+.footer {
+  background-color: #24314a;
+  color: white;
+  padding: 20px;
+}
+.footer__item {
+  margin-top: 50px;
+}
+.footer__item:nth-child(1) {
+  margin-top: 0;
+}
+.footer__item h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.footer__item dl {
+  display: flex;
+  margin-top: 10px;
+}
+.footer__item dl dt {
+  width: 70px;
+}
+.footer__item img {
+  width: 200px;
+  margin-top: 20px;
+}
+.footer .footer-copyright {
+  text-align: center;
+  padding: 50px 0;
 }/*# sourceMappingURL=layout.css.map */

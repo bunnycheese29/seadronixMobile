@@ -47,13 +47,16 @@
     <link rel="stylesheet" href="../css/common.css" />
     <link rel="stylesheet" href="../css/aos.css" />
     <link rel="stylesheet" href="../css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../css/splitting.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/main.css" />
     <!-- script jsc > enter -->
-    <!-- 외부 라이브러리 js는 여기다 적어도 되는데
-    내가 짜는 js에는 defer라고 적어줘야함 -->
+    <!-- 외부 라이브러리 js는 여기다 그냥 적어도 되는데
+    내가 짜는 js에는 "defer"를 붙여줘야함 -->
     <script src="../js/aos.js"></script>
     <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/gsap/gsap.min.js"></script>
+    <script src="../js/splitting.min.js"></script>
     <script src="../js/main.js" defer></script>
   </head>
   <body>
@@ -157,28 +160,16 @@
           </ul>
           <div class="pagination"></div>
         </div>
-        <div class="visual__txt">
-          <h3
-            data-aos="fade-right"
-            data-aos-duration="1000"
-            data-aos-delay="300"
-          >
+        <div class="visual__txt" data-splitting>
+          <h3>
             PORT-TO-PORT <br />
             AI PLATFORM COMPANY
           </h3>
-          <p
-            data-aos="fade-right"
-            data-aos-duration="1000"
-            data-aos-delay="600"
-          >
+          <p>
             선박과 항만의 연결,그리고 자율운항선박이 나아갈 길을<br />
             씨드로닉스는 Data-driven solution으로 이끌어 갑니다.
           </p>
-          <p
-            data-aos="fade-right"
-            data-aos-duration="1000"
-            data-aos-delay="600"
-          >
+          <p>
             해양 환경의 안전과 미래를 책임질 씨드로닉스와 함께 미래를
             준비하세요.
           </p>
@@ -187,8 +178,8 @@
       <!-- visual end -->
       <section class="about section">
         <div class="container">
-          <div class="about__txt" data-aos="fade-up">
-            <h2>
+          <div class="about__txt">
+            <h2 id="title">
               <strong>인공지능 기술</strong>을 통해<br />
               <strong>해양물류의 혁신</strong>을 이루어 갑니다.
             </h2>
@@ -202,7 +193,7 @@
               <span class="material-icons"> navigate_next </span></a
             >
           </div>
-          <div class="about__img" data-aos="fade-left" data-aos-delay="500">
+          <div class="about__img">
             <img
               src="../images/main/main-overview-logo_re.jpg"
               alt="seadronix_logo"
@@ -213,71 +204,29 @@
       <!-- about end -->
       <section class="products section gray">
         <div class="container">
-          <div
-            class="products-title"
-            data-aos="fade-up"
-            data-aos-duration="500"
-          >
+          <div class="products-title">
             <h2><strong>Our Products</strong></h2>
             <p>
               선박과 항만을 <strong>유기적인 관계</strong>로 기획하고,
               <strong>제품을 구현</strong>합니다.
             </p>
           </div>
-          <div
-            class="products-banner"
-            class="products-title"
-            data-aos="fade-up"
-            data-aos-duration="500"
-            data-aos-delay="500"
-          >
+          <div class="products-banner" class="products-title">
             <a href=""
-              ><div
-                class="products-banner__title"
-                data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-delay="800"
-              >
+              ><div class="products-banner__title">
                 <h3>AVISS</h3>
                 <p>항만분야</p>
               </div>
-              <img
-                src="../images/main/main-aviss.jpg"
-                alt="AVISS"
-                data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-delay="800"
-              />
-              <span
-                class="material-icons more"
-                data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-delay="800"
-              >
-                add_circle
-              </span>
+              <img src="../images/main/main-aviss.jpg" alt="AVISS" />
+              <span class="material-icons more"> add_circle </span>
             </a>
             <a href=""
-              ><div
-                class="products-banner__title"
-                data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-delay="900"
-              >
+              ><div class="products-banner__title">
                 <h3>NAVISS</h3>
                 <p>선박분야</p>
               </div>
-              <img
-                src="../images/main/main-naviss.jpg"
-                alt="NAVISS"
-                data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-delay="900"
-              /><span
+              <img src="../images/main/main-naviss.jpg" alt="NAVISS" /><span
                 class="material-icons more"
-                data-aos="fade-up"
-                data-aos-duration="500"
-                data-aos-delay="900"
               >
                 add_circle
               </span>
@@ -286,7 +235,7 @@
         </div>
       </section>
       <!-- products end -->
-      <section class="section banner" data-aos="fade">
+      <section class="section banner">
         <div class="container">
           <h2>
             <strong>
@@ -302,12 +251,7 @@
       <!-- banner end -->
       <section class="section tech">
         <div class="container">
-          <div
-            class="tech-title tech-item"
-            class="products-title"
-            data-aos="fade-up"
-            data-aos-duration="500"
-          >
+          <div class="tech-title tech-item" class="products-title">
             <h2><strong>Our Technology</strong></h2>
             <p>
               <strong>선박의 운항, 경험</strong>을 넘어<br />
@@ -320,12 +264,7 @@
           </div>
           <div class="tech-banner tech-item">
             <a href="">
-              <div
-                class="tech-banner__title"
-                data-aos="fade-left"
-                data-aos-duration="500"
-                data-aos-delay="800"
-              >
+              <div class="tech-banner__title">
                 <h3><strong>AI</strong></h3>
                 <p>
                   해양 환경에 특화된 인공지능 기술은<br />
@@ -333,17 +272,8 @@
                   바다 위에 존재하는 객체를 인식하고 분류합니다.
                 </p>
               </div>
-              <img
-                src="../images/main/main-ai_re.jpg"
-                alt="ai"
-                data-aos="fade-left"
-                data-aos-duration="500"
-                data-aos-delay="800"
-              /><span
+              <img src="../images/main/main-ai_re.jpg" alt="ai" /><span
                 class="material-icons more"
-                data-aos="fade-left"
-                data-aos-duration="500"
-                data-aos-delay="800"
               >
                 add_circle</span
               >
@@ -351,12 +281,7 @@
           </div>
           <div class="tech-banner tech-item">
             <a href="">
-              <div
-                class="tech-banner__title"
-                data-aos="fade-left"
-                data-aos-duration="500"
-                data-aos-delay="900"
-              >
+              <div class="tech-banner__title">
                 <h3><strong>Sensor Fusion</strong></h3>
                 <p>
                   Radar, LiDAR 등의 센서 데이터를<br />
@@ -367,34 +292,18 @@
               <img
                 src="../images/main/main-sensor-fusion_re.jpg"
                 alt="fusion"
-                data-aos="fade-left"
-                data-aos-duration="500"
-                data-aos-delay="900"
-              /><span
-                class="material-icons more"
-                data-aos="fade-left"
-                data-aos-duration="500"
-                data-aos-delay="900"
-              >
-                add_circle</span
-              >
+              /><span class="material-icons more"> add_circle</span>
             </a>
           </div>
         </div>
       </section>
       <!-- tech end -->
       <section class="section investors">
-        <div
-          class="container"
-          class="products-title"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
+        <div class="container" class="products-title">
           <h2><strong>Our Investors</strong></h2>
           <!-- prettier-ignore -->
           <ul class="investors__list" class="products-title"
-          data-aos="fade-up"
-          data-aos-duration="1000">
+          >
           <li><a href=""><img src="../images/main/investor1.png" alt=""></a></li>
           <li><a href=""><img src="../images/main/investor2.png" alt=""></a></li>
           <li><a href=""><img src="../images/main/investor3.png" alt=""></a></li>
@@ -407,12 +316,7 @@
       </section>
       <!-- investors end -->
       <section class="section news">
-        <div
-          class="container"
-          class="investors-title"
-          data-aos="fade-up"
-          data-aos-duration="500"
-        >
+        <div class="container" class="investors-title">
           <div class="news-title">
             <h2><strong>Recent News</strong></h2>
             <a href="" class="btn"
@@ -621,8 +525,8 @@
         </div>
       </div>
     </footer>
-    <button class="btn-top">
+    <!-- <button class="btn-top">
       <span class="material-icons"> north </span>
-    </button>
+    </button> -->
   </body>
 </html>

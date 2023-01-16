@@ -123,3 +123,45 @@ body {
     }
   }
 }
+
+.language {
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  font-weight: 700;
+  transform: translateY(-50%);
+  .active {
+    color: $blue;
+  }
+}
+
+.footer {
+  background-color: #24314a;
+  color: white;
+  padding: 20px;
+  &__item {
+    margin-top: 50px;
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+    h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    dl {
+      display: flex;
+      margin-top: 10px;
+      dt {
+        width: 70px;
+      }
+    }
+    img {
+      width: 200px;
+      margin-top: 20px;
+    }
+  }
+  .footer-copyright {
+    text-align: center;
+    padding: 50px 0;
+  }
+}

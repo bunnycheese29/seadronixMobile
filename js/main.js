@@ -4,6 +4,8 @@
 // }
 // average(222, 2233);
 
+Splitting();
+
 //click은 콜백함수
 const btnAll = document.querySelector(".btn--all");
 const header = document.querySelector(".header");
@@ -41,5 +43,25 @@ new Swiper(".visual__list", {
   pagination: {
     el: ".visual__list .pagination",
     type: "bullets",
+    clickable: true,
   },
+  cubeEffect: {
+    shadow: false,
+  },
+});
+
+new Swiper(".news-banner", {
+  slidesPerView: "auto",
+  spaceBetween: 20,
+  centeredSlides: true,
+  loop: true,
+});
+
+//visual__txt 움직이기
+gsap.to(".visual__txt .char", {
+  x: 0,
+  opacity: 1,
+  duration: 1,
+  ease: "power4",
+  stagger: 0.02,
 });

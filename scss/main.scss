@@ -43,3 +43,233 @@
     }
   }
 }
+
+.visual__txt {
+  position: absolute;
+  top: 50%;
+  color: white;
+  //글자 안 보이면 aos때문
+  z-index: 2;
+  padding: 0 20px;
+  //글자 단위로 줄바꿈을 하지 않는다.
+  word-break: keep-all;
+  transform: translateY(-50%);
+  h3 {
+    font-weight: 700;
+    font-size: clamp(24px, 7.5vw, 48px);
+    //x, y, blur, color
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+  }
+  br {
+    display: none;
+  }
+  .word {
+    overflow: hidden;
+  }
+  .char {
+    opacity: 0.5;
+    transform: translateX(-50px);
+  }
+  // .char:nth-child(1) {
+  //   animation-delay: 0.1s;
+  // }
+  // .char:nth-child(2) {
+  //   animation-delay: 0.2s;
+  // }
+  // .char:nth-child(3) {
+  //   animation-delay: 0.3s;
+  // }
+}
+
+.section {
+  padding: 50px 20px;
+  h2 {
+    font-size: clamp(20px, 5vw, 36px);
+    margin-bottom: 30px;
+    word-break: keep-all;
+    line-height: 1.25;
+    strong {
+      font-weight: 700;
+    }
+  }
+  p {
+    font-size: 14px;
+  }
+  br {
+    display: none;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px;
+    border: 1px solid $blue;
+    border-radius: 5px;
+    color: $blue;
+    font-size: 14px;
+
+    margin-top: 30px;
+    font-weight: 700;
+    &--white {
+      border-color: white;
+      color: white;
+    }
+  }
+}
+
+.about {
+  &__img {
+    margin-top: 30px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.products {
+  padding-top: 0;
+  &-banner {
+    a {
+      position: relative;
+      display: block;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 30px;
+      img {
+        width: 100%;
+        aspect-ratio: 2/1;
+      }
+      span {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        color: white;
+        font-size: 36px;
+      }
+    }
+    &__title {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      color: white;
+      h3 {
+        font-size: 24px;
+        font-weight: 700;
+      }
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.banner {
+  background: rgb(0, 212, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(24, 132, 252, 1) 0%,
+    rgba(16, 42, 70, 1) 100%
+  );
+  color: #fff;
+  text-align: center;
+}
+
+.tech {
+  &-banner {
+    a {
+      position: relative;
+      display: block;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-top: 30px;
+      img {
+        width: 100%;
+        aspect-ratio: 3/2;
+      }
+      .more {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        color: white;
+        font-size: 36px;
+      }
+    }
+    &__title {
+      position: absolute;
+      width: calc(100% - 20px);
+      word-break: keep-all;
+      left: 20px;
+      top: 20px;
+      color: white;
+    }
+    h3 {
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.investors {
+  background-image: url("../images/main/main-investors.jpg");
+  color: white;
+  &__list {
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    li {
+      width: calc(50% - 20px);
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.news {
+  .news-banner {
+    margin-top: 30px;
+  }
+  li {
+    width: 80%;
+    position: relative;
+    .sticker {
+      padding: 5px 10px;
+      background-color: $red;
+      color: white;
+      border-radius: 5px;
+      font-size: 14px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+    img {
+      width: 100%;
+      border-radius: 20px;
+    }
+    .news__txt {
+      h3 {
+        font-size: 18px;
+        font-weight: 700;
+        margin: 20px 0;
+      }
+    }
+  }
+  .btn {
+    display: none;
+  }
+}
+
+@keyframes showTxt {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
